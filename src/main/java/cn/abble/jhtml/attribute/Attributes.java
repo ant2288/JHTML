@@ -25,7 +25,9 @@ public class Attributes {
     }
 
     private void add(String key,Attribute attribute){
-        if(map.containsKey(checkNotNull(key))) return;
+        if(map.containsKey(checkNotNull(key))) {
+            return;
+        }
         map.put(checkNotNull(key),attribute);
     }
 
