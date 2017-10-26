@@ -14,7 +14,9 @@ public class AttributeTest {
         Attributes attributes = new Attributes();
         attributes.add("id","myId");
         attributes.add("class","table");
-        System.out.print(attributes.toString());
+        attributes.add("disabled",null);
+        attributes.add("type","text");
+        System.out.print(attributes.getText());
     }
 
     @Test
