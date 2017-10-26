@@ -41,7 +41,7 @@ public class Attribute {
 
     public String getValue() {
 
-        return value == null ? "" : value;
+        return value;
     }
 
     public void setValue(String value) {
@@ -54,7 +54,8 @@ public class Attribute {
      */
 
     public String getText(){
-        return getKey()+"="+"\""+getValue()+"\"";
+
+        return getValue() != null ?getKey()+"="+"\""+getValue()+"\"" : getKey();
     }
 
     @Override
