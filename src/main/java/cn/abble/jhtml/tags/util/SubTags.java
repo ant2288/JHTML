@@ -1,5 +1,7 @@
 package cn.abble.jhtml.tags.util;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import cn.abble.jhtml.tags.Tag;
 
 import java.util.LinkedList;
@@ -41,6 +43,28 @@ public class SubTags {
     public Tag getLast(){
         this.checkSize();
         return list.getLast();
+    }
+
+    /**
+     * 添加一个标签到子标签的第一个位置
+     * @param tag 要添加的标签对象
+     */
+    public void addFirst(Tag tag){
+        checkNotNull(tag);
+        list.addFirst(tag);
+    }
+
+    /**
+     * 添加一个标签到子标签的最后一个位置
+     * @param tag 要添加的标签对象
+     */
+    public void addLast(Tag tag){
+        checkNotNull(tag);
+        list.addLast(tag);
+    }
+
+    public void addTagByIndex(Tag tag , int index){
+
     }
 
     private void checkSize(){

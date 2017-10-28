@@ -2,6 +2,7 @@ package cn.abble.jhtml.attribute;
 
 
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 
 /**
@@ -64,5 +65,39 @@ public class Attribute {
                 .add("key",getKey())
                 .add("value",getValue())
                 .toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) {
+            return false;
+        }
+        if(!(obj instanceof Attribute)){
+            return false;
+        }
+        Attribute temp = (Attribute)obj;
+        if(!this.getKey().equals(temp.getKey())){
+            return false;
+        }
+        if(this.getValue() == null && temp.getValue() == null){
+            return true;
+        }
+        if(this.getValue() != null && temp.getValue() == null){
+            return false;
+        }
+
+        if(this.getValue() == null && temp.getValue() != null){
+            return false;
+        }
+
+        if(this.getValue().equals(temp.getValue())){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(key,value);
     }
 }

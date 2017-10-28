@@ -3,8 +3,9 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/
 *.iml
+target/
 out
 gen### Eclipse template
 
