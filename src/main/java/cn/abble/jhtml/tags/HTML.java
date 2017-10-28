@@ -1,9 +1,14 @@
 package cn.abble.jhtml.tags;
 
+import cn.abble.jhtml.attribute.Attribute;
 import cn.abble.jhtml.attribute.Attributes;
+import cn.abble.jhtml.tags.util.SubTags;
+import cn.abble.jhtml.util.StringToAttributeList;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * html的标签，实现了Tag接口。
@@ -14,10 +19,17 @@ import java.util.Objects;
 public class HTML implements Tag {
     public static final String TAG_NAME = "html";
 
+    public static final boolean SELF_CLOSING_TAG = false;
+
     /**
      * 用于存储该标签的所有属性
      */
     private Attributes attributes;
+
+    /**
+     * 存储子标签
+     */
+    private SubTags subTags;
 
     /**
      * 获取该标签的所有属性
@@ -27,8 +39,13 @@ public class HTML implements Tag {
         return attributes;
     }
 
+    public static Tag createHTMLTag(){
+        return new HTML();
+    }
+
     private HTML(){
         attributes = new Attributes();
+        subTags = new SubTags();
     }
     @Override
     public String getTagName() {
@@ -37,17 +54,54 @@ public class HTML implements Tag {
 
     @Override
     public String getText() {
-        return null;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<html ");
+        sb.append(this.attributes.getText());
+        sb.append(">");
+        sb.append(this.subTags.getText());
+        sb.append(this.closeTag());
+        return sb.toString();
     }
 
     @Override
-    public List<Tag> getChildrenTags() {
-        return null;
+    public SubTags getChildrenTags() {
+        return subTags;
     }
 
     @Override
     public Tag getParent() {
         return null;
+    }
+
+    @Override
+    public String closeTag() {
+        return "</html>";
+    }
+
+    @Override
+    public boolean isSelfColsingTag() {
+        return SELF_CLOSING_TAG;
+    }
+
+    @Override
+    public void addAttribute(String name, @Nullable String value) {
+        this.attributes.add(checkNotNull(name),value);
+    }
+
+    @Override
+    public void addAttribute(String... nameAndValue) {
+        List<Attribute> list = StringToAttributeList.StringToAttributeList(checkNotNull(nameAndValue));
+        this.attributes.add(list);
+    }
+
+    @Override
+    public void clearAttributes() {
+        this.attributes.cleanAll();
+    }
+
+    @Override
+    public void delAttribute(String name) {
+        this.attributes.del(checkNotNull(name));
     }
 
     @Override
@@ -62,13 +116,14 @@ public class HTML implements Tag {
         if(!attributes.equals(temp.getAttributes())){
             return false;
         }
-        //TODO:比较子标签
+        if(!subTags.equals(temp.subTags)){
+            return false;
+        }
         return true;
     }
 
     @Override
     public int hashCode(){
-        //TODO:计算子标签的hash值
-        return Objects.hash(TAG_NAME,attributes);
+        return Objects.hash(TAG_NAME,attributes,subTags);
     }
 }

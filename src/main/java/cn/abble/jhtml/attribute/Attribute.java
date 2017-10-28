@@ -56,7 +56,7 @@ public class Attribute {
 
     public String getText(){
 
-        return getValue() != null ?getKey()+"="+"\""+getValue()+"\"" : getKey();
+        return getValue() != null ?getKey()+"="+getValue() : getKey();
     }
 
     @Override

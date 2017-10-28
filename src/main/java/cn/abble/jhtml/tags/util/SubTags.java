@@ -5,6 +5,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import cn.abble.jhtml.tags.Tag;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 /**
  * 用于存放所有的子标签的工具类，使用LinkedList实现
@@ -67,9 +68,44 @@ public class SubTags {
 
     }
 
+    /**
+     * 获取所有子标签的HTML代码
+     * @return 所有子标签的HTML代码;
+     */
+    public String getText(){
+        StringBuffer sb = new StringBuffer();
+        for(Tag t : list){
+            sb.append(t.getText());
+        }
+        return sb.toString();
+    }
+
     private void checkSize(){
         if(list.size() == 0){
             throw new IndexOutOfBoundsException();
         }
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) {
+            return false;
+        }
+
+        if(!(obj instanceof SubTags)){
+            return false;
+        }
+
+        SubTags temp = (SubTags)obj;
+
+        if(this.list.equals(temp.list)){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(list);
     }
 }

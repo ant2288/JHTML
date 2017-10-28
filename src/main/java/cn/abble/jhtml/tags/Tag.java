@@ -1,7 +1,8 @@
 package cn.abble.jhtml.tags;
 
+import cn.abble.jhtml.tags.util.SubTags;
+
 import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * 所有的标签都实现了这个接口
@@ -26,13 +27,25 @@ public interface Tag {
      * 获取所有的子标签
      * @return 返回所有的子标签
      */
-    List<Tag> getChildrenTags();
+    SubTags getChildrenTags();
 
     /**
      * 获取父标签
      * @return 返回父标签
      */
     Tag getParent();
+
+    /**
+     * 返回标签关闭的字符串，如自闭和标签的“/>”，普通标签的"</标签名称>"
+     * @return
+     */
+    String closeTag();
+
+    /**
+     * 返回该标签是否是一个自闭和标签
+     * @return
+     */
+    boolean isSelfColsingTag();
 
     /**
      * 向该标签添加属性
@@ -59,7 +72,8 @@ public interface Tag {
      * @param name 属性名
      * @return 是否删除成功 true是成功，false是不成功
      */
-    boolean delAttribute(String name);
+    void delAttribute(String name);
+
 
 
 }

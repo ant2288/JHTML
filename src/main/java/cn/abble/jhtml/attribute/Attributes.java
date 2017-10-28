@@ -6,6 +6,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+
 import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
 
@@ -42,6 +44,16 @@ public class Attributes {
      */
     public void add(String name,String value){
         this.add(new Attribute(checkNotNull(name),value));
+    }
+
+    /**
+     * 使用List批量添加属性
+     * @param list 存储着Attribute的List
+     */
+    public void add(List<Attribute> list){
+        for(Attribute a : list){
+            this.add(a);
+        }
     }
 
     private void revise(String key,Attribute attribute){
@@ -109,6 +121,23 @@ public class Attributes {
         return sb.toString().trim();
     }
 
+    /**
+     * 获取所有的属性map
+     * @return 返回map，包含所有的属性
+     */
+    public Map<String, Attribute> getMap() {
+        return map;
+    }
+
+    /**
+     * 清空所有属性
+     */
+    public void cleanAll(){
+        map.clear();
+    }
+
+
+
     @Override
     public String toString(){
         List<Attribute> list = this.getAll();
@@ -120,5 +149,24 @@ public class Attributes {
         return sb.toString();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+        if(!(obj instanceof Attributes)){
+            return false;
+        }
 
+        Attributes temp = (Attributes)obj;
+        if(map.equals(temp.getMap())){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(map);
+    }
 }

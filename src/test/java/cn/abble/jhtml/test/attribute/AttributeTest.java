@@ -26,4 +26,13 @@ public class AttributeTest {
         Assert.assertNotNull(attribute);
         System.out.print(attribute);
     }
+
+    @Test
+    public void equalsTest(){
+        Attribute a1 = new Attribute();
+        Attribute a2 = new Attribute();
+        a1.setKey("id");
+        a2.setKey("id1");
+        System.out.print(a1.equals(a2));
+    }
 }
