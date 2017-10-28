@@ -1,5 +1,6 @@
 package cn.abble.jhtml.tags;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -32,4 +33,33 @@ public interface Tag {
      * @return 返回父标签
      */
     Tag getParent();
+
+    /**
+     * 向该标签添加属性
+     * @param name 属性名
+     * @param value 属性值 可以为空
+     */
+    void addAttribute(String name,@Nullable String value);
+
+    /**
+     * 向该标签添加多个属性。
+     * 属性名称和属性值使用等号分割,不需要属性值的就直接输入属性名就可以如:
+     * input.addAttribute("id=1","class='username'","readonly");
+     * @param nameAndValue 属性名与属性值，可以使用等号分割,如input.addAttribute("id=1","class='username'","readonly");
+     */
+    void addAttribute(String... nameAndValue);
+
+    /**
+     * 清空该标签的所有属性。
+     */
+    void clearAttributes();
+
+    /**
+     * 根据属性名删除属性
+     * @param name 属性名
+     * @return 是否删除成功 true是成功，false是不成功
+     */
+    boolean delAttribute(String name);
+
+
 }
