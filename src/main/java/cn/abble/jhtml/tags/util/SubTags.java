@@ -72,10 +72,10 @@ public class SubTags {
      * 获取所有子标签的HTML代码
      * @return 所有子标签的HTML代码;
      */
-    public String getText(){
+    public String getText(int c){
         StringBuffer sb = new StringBuffer();
         for(Tag t : list){
-            sb.append(t.getText());
+            sb.append(t.getText(c));
         }
         return sb.toString();
     }

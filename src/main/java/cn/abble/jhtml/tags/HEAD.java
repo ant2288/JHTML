@@ -10,7 +10,7 @@ import cn.abble.jhtml.tags.util.SubTags;
  * @version Version 1.0
  * @since 1.0
  */
-public class HEAD extends AbstractTag implements Tag{
+public class HEAD extends AbstractTag{
     public static final String TAG_NAME = "head";
 
     public static final boolean SELF_CLOSING_TAG = false;

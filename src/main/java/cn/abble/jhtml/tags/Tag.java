@@ -100,4 +100,11 @@ public interface Tag {
      */
     Attributes getAttributes();
 
+    /**
+     * 返回一个可阅读的html字符串，一般不需要手动调用
+     * @param c 层数
+     * @return sb
+     */
+    String getText(int c);
+
 }

@@ -16,7 +16,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * @version Version 1.0
  * @since 1.0
  */
-public class HTML extends AbstractTag implements Tag {
+public class HTML extends AbstractTag{
     public static final String TAG_NAME = "html";
 
     public static final boolean SELF_CLOSING_TAG = false;

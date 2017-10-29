@@ -76,20 +76,30 @@ public abstract class AbstractTag implements Tag{
     }
 
     @Override
-    public String getText() {
+    public String getText(int c) {
         StringBuffer sb = new StringBuffer();
+        for(int i=0;i<c;i++){
+            sb.append("\t");
+        }
         sb.append("<"+this.getTagName()+" ");
         sb.append(attributes.getText());
         if(this.isSelfClosingTag()){
             sb.append("/>");
             return sb.toString();
         }else{
-            sb.append(">");
-            sb.append(subTags.getText());
-            sb.append("</" + this.getTagName() + ">");
+            sb.append(">\n");
+            sb.append(subTags.getText(c+1));
+            for(int i=0;i<c;i++){
+                sb.append("\t");
+            }
+            sb.append("</" + this.getTagName() + ">\n");
             return sb.toString();
         }
     }
 
+    @Override
+    public String getText(){
+        return getText(0);
+    }
 
 }
