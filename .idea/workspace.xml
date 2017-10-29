@@ -4,24 +4,14 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2293d7-18ab-436c-8a04-febfb2b837d5" name="Default" comment="继续完成Tag接口，完成度……">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/util/StringToAttributeList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/attribute/AttributesTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/util/StringToAttributeListTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/attribute/Attribute.class" afterPath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/attribute/Attribute.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/attribute/Attributes.class" afterPath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/attribute/Attributes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/generate/Generate.class" afterPath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/generate/Generate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/tags/HTML.class" afterPath="$PROJECT_DIR$/../JHTML/target/classes/cn/abble/jhtml/tags/HTML.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/target/test-classes/cn/abble/jhtml/test/attribute/AttributeTest.class" afterPath="$PROJECT_DIR$/../JHTML/target/test-classes/cn/abble/jhtml/test/attribute/AttributeTest.class" />
+    <list default="true" id="8b2293d7-18ab-436c-8a04-febfb2b837d5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/AbstractTag.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HEAD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/.gitignore" afterPath="$PROJECT_DIR$/../JHTML/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JHTML/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attribute.java" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HTML.java" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HTML.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/Tag.java" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/Tag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/util/SubTags.java" afterPath="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/util/SubTags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/attribute/AttributeTest.java" afterPath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/attribute/AttributeTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java" afterPath="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/../JHTML/out/" />
     <ignored path="$PROJECT_DIR$/../JHTML/target/" />
@@ -34,20 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SubTags.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/util/SubTags.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1965#1966#0" expanded="true" />
-                <element signature="e#2006#2007#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Attribute.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attribute.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,65 +39,74 @@
       <file leaf-file-name="HTML.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HTML.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="629">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#885#886#0" expanded="true" />
-                <element signature="e#918#919#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1454#1455#0" expanded="true" />
-                <element signature="e#1484#1485#0" expanded="true" />
-                <element signature="e#1528#1529#0" expanded="true" />
-                <element signature="e#1555#1556#0" expanded="true" />
-                <element signature="e#1601#1602#0" expanded="true" />
-                <element signature="e#1633#1634#0" expanded="true" />
-                <element signature="e#1688#1689#0" expanded="true" />
-                <element signature="e#1727#1728#0" expanded="true" />
-                <element signature="e#1810#1811#0" expanded="true" />
-                <element signature="e#1871#1872#0" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2179#2180#0" expanded="true" />
-                <element signature="e#2238#2239#0" expanded="true" />
-                <element signature="e#2293#2294#0" expanded="true" />
-                <element signature="method#equals#0;class#HTML#0" expanded="false" />
-                <element signature="e#2741#2742#0" expanded="true" />
-                <element signature="e#2805#2806#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
+                <element signature="e#853#854#0" expanded="true" />
+                <element signature="e#908#909#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#1012#1013#0" expanded="true" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1546#1547#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HTMLTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HEAD.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HEAD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-50">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+                <element signature="e#531#532#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#610#611#0" expanded="true" />
+                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#704#705#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HTMLTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringToAttributeList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/util/StringToAttributeList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringToAttributeListTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/util/StringToAttributeListTest.java">
+      <file leaf-file-name="AbstractTag.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/AbstractTag.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+              <caret line="86" column="27" lean-forward="false" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#613#614#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#998#999#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1144#1145#0" expanded="true" />
+                <element signature="e#1434#1435#0" expanded="true" />
+                <element signature="e#1490#1491#0" expanded="true" />
+                <element signature="e#1540#1541#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+                <element signature="e#1635#1636#0" expanded="true" />
+                <element signature="e#1685#1686#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,28 +115,10 @@
       <file leaf-file-name="Tag.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/Tag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+            <state relative-caret-position="365">
+              <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Attributes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3293#3294#0" expanded="true" />
-                <element signature="e#3319#3320#0" expanded="true" />
-                <element signature="e#3378#3379#0" expanded="true" />
-                <element signature="e#3405#3406#0" expanded="true" />
-                <element signature="e#4076#4077#0" expanded="true" />
-                <element signature="e#4116#4117#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,7 +164,9 @@
         <option value="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java" />
         <option value="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/Tag.java" />
         <option value="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HTML.java" />
+        <option value="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/AbstractTag.java" />
         <option value="$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java" />
+        <option value="$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HEAD.java" />
       </list>
     </option>
   </component>
@@ -255,54 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JHTML" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JHTML" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="JHTML" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JHTML" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Default">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
-              <item name=".idea" type="cbb8eebc:String" user=".idea" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
-              <item name=".idea" type="cbb8eebc:String" user=".idea" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -367,16 +288,6 @@
               <item name="JHTML" type="b2602c69:ProjectViewProjectNode" />
               <item name="JHTML" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jhtml" type="462c0819:PsiDirectoryNode" />
-              <item name="tags" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JHTML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JHTML" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -407,6 +318,54 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JHTML" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JHTML" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="JHTML" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JHTML" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Default">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
+              <item name=".idea" type="cbb8eebc:String" user=".idea" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="JHTML" type="cbb8eebc:String" user="JHTML" />
+              <item name=".idea" type="cbb8eebc:String" user=".idea" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -672,7 +631,8 @@
       <workItem from="1508936544749" duration="1204000" />
       <workItem from="1509012486152" duration="2759000" />
       <workItem from="1509152455224" duration="5704000" />
-      <workItem from="1509188190075" duration="6280000" />
+      <workItem from="1509188190075" duration="6930000" />
+      <workItem from="1509233795571" duration="3201000" />
     </task>
     <task id="LOCAL-00001" summary="一些修改">
       <created>1508928373425</created>
@@ -744,18 +704,25 @@
       <option name="project" value="LOCAL" />
       <updated>1509190183334</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="继续添加功能，完成了第一个HTML标签html。">
+      <created>1509194546162</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1509194546162</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HTMLTest_getTextTest - 2017.10.28 at 20h 35m 12s.xml">
+    <history-entry file="HTMLTest_getTextTest - 2017.10.29 at 08h 26m 20s.xml">
       <configuration name="HTMLTest.getTextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HTMLTest_getTextTest - 2017.10.28 at 20h 35m 50s.xml">
+    <history-entry file="HTMLTest_getTextTest - 2017.10.29 at 08h 26m 48s.xml">
       <configuration name="HTMLTest.getTextTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringToAttributeListTest_StringToList - 2017.10.28 at 20h 17m 00s.xml">
-      <configuration name="StringToAttributeListTest.StringToList" configurationId="JUnit" />
+    <history-entry file="HTMLTest_getTextTest - 2017.10.29 at 08h 29m 10s.xml">
+      <configuration name="HTMLTest.getTextTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="StringToAttributeListTest_StringToList - 2017.10.28 at 20h 17m 09s.xml">
       <configuration name="StringToAttributeListTest.StringToList" configurationId="JUnit" />
@@ -780,7 +747,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24548000" />
+    <option name="totallyTimeSpent" value="28399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-780" width="2576" height="1416" extended-state="6" />
@@ -794,12 +761,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22517592" sideWeight="0.5063593" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994527" sideWeight="0.49284577" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60203284" sideWeight="0.49841017" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21188429" sideWeight="0.49841017" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994527" sideWeight="0.49682036" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15699524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35652855" sideWeight="0.4936407" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1581876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35652855" sideWeight="0.4936407" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -891,7 +858,8 @@
     <MESSAGE value="新增SubTags类" />
     <MESSAGE value="一些文件" />
     <MESSAGE value="继续完成Tag接口，完成度……" />
-    <option name="LAST_COMMIT_MESSAGE" value="继续完成Tag接口，完成度……" />
+    <MESSAGE value="继续添加功能，完成了第一个HTML标签html。" />
+    <option name="LAST_COMMIT_MESSAGE" value="继续添加功能，完成了第一个HTML标签html。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -900,14 +868,84 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HTML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/util/StringToAttributeList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/util/StringToAttributeListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2352">
+          <caret line="117" column="32" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#3319#3320#0" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3405#3406#0" expanded="true" />
+            <element signature="e#4076#4077#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/util/SubTags.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1608">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1965#1966#0" expanded="true" />
-            <element signature="e#2006#2007#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1000,7 +1038,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,27 +1050,14 @@
           <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="method#equals#0;class#HTML#0" expanded="false" />
-            <element signature="e#2741#2742#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1057,27 +1084,14 @@
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="method#equals#0;class#HTML#0" expanded="false" />
-            <element signature="e#2741#2742#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1146,27 +1160,14 @@
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="method#equals#0;class#HTML#0" expanded="false" />
-            <element signature="e#2741#2742#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1279,26 +1280,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="13" column="62" lean-forward="false" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/util/StringToAttributeListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/util/StringToAttributeListTest.java">
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/util/StringToAttributeList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        <state relative-caret-position="624">
+          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/util/StringToAttributeList.java">
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="2352">
+          <caret line="117" column="32" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#3319#3320#0" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3405#3406#0" expanded="true" />
+            <element signature="e#4076#4077#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/util/SubTags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1315,80 +1339,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/util/SubTags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1965#1966#0" expanded="true" />
-            <element signature="e#2006#2007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        <state relative-caret-position="365">
+          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/attribute/Attributes.java">
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/AbstractTag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+        <state relative-caret-position="336">
+          <caret line="86" column="27" lean-forward="false" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3293#3294#0" expanded="true" />
-            <element signature="e#3319#3320#0" expanded="true" />
-            <element signature="e#3378#3379#0" expanded="true" />
-            <element signature="e#3405#3406#0" expanded="true" />
-            <element signature="e#4076#4077#0" expanded="true" />
-            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HTML.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state relative-caret-position="629">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="method#equals#0;class#HTML#0" expanded="false" />
-            <element signature="e#2741#2742#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../JHTML/src/test/java/cn/abble/jhtml/test/tags/HTMLTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JHTML/src/main/java/cn/abble/jhtml/tags/HEAD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

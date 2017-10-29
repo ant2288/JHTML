@@ -1,5 +1,6 @@
 package cn.abble.jhtml.tags;
 
+import cn.abble.jhtml.attribute.Attributes;
 import cn.abble.jhtml.tags.util.SubTags;
 
 import javax.annotation.Nullable;
@@ -35,17 +36,18 @@ public interface Tag {
      */
     Tag getParent();
 
-    /**
-     * 返回标签关闭的字符串，如自闭和标签的“/>”，普通标签的"</标签名称>"
-     * @return
-     */
-    String closeTag();
+//
+//    /**
+//     * 返回标签关闭的字符串，如自闭和标签的“/>”，普通标签的"</标签名称>"
+//     * @return
+//     */
+//    String closeTag();
 
     /**
      * 返回该标签是否是一个自闭和标签
      * @return
      */
-    boolean isSelfColsingTag();
+    boolean isSelfClosingTag();
 
     /**
      * 向该标签添加属性
@@ -74,6 +76,28 @@ public interface Tag {
      */
     void delAttribute(String name);
 
+    /**
+     * 设置父标签
+     * @param parent 父标签
+     */
+    void setParent(Tag parent);
 
+    /**
+     * 添加子节点到最后一个位置
+     * @param children 要添加的子节点
+     */
+    void addChildren(Tag children);
+
+    /**
+     * 添加子节点到第一个位置
+     * @param children 要添加的子节点
+     */
+    void addChildrenFirst(Tag children);
+
+    /**
+     * 获取所有的属性
+     * @return Attributes 所有的属性
+     */
+    Attributes getAttributes();
 
 }
