@@ -7,12 +7,10 @@ import org.junit.Test;
 public class CreateTest {
     @Test
     public void createTagByNameTest(){
-        Tag html = Create.createTagByName("html");
-        Tag head = Create.createTagByName("head");
-        Tag body = Create.createTagByNameWithAttribute("body","id='body'","readyOnly");
-        Tag x = Create.createTagByNameWithParent("head",body);
-        head.setParent(html);
-        body.setParent(html);
-        System.out.print(html.getText());
+        Tag tag = Create.createTagByName("div");
+
+
+
+        System.out.print(tag.getText());
     }
 }

@@ -36,13 +36,6 @@ public interface Tag {
      */
     Tag getParent();
 
-//
-//    /**
-//     * 返回标签关闭的字符串，如自闭和标签的“/>”，普通标签的"</标签名称>"
-//     * @return
-//     */
-//    String closeTag();
-
     /**
      * 返回该标签是否是一个自闭和标签
      * @return
@@ -105,6 +98,6 @@ public interface Tag {
      * @param c 层数
      * @return sb
      */
-    String getText(int c);
+    StringBuffer getText(int c,StringBuffer sb);
 
 }

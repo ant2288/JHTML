@@ -76,8 +76,8 @@ public abstract class AbstractTag implements Tag{
     }
 
     @Override
-    public String getText(int c) {
-        StringBuffer sb = new StringBuffer();
+    public StringBuffer getText(int c,StringBuffer sb) {
+        //StringBuffer sb = new StringBuffer();
         for(int i=0;i<c;i++){
             sb.append("\t");
         }
@@ -85,21 +85,21 @@ public abstract class AbstractTag implements Tag{
         sb.append(attributes.getText());
         if(this.isSelfClosingTag()){
             sb.append("/>");
-            return sb.toString();
+            return sb;
         }else{
             sb.append(">\n");
-            sb.append(subTags.getText(c+1));
+            subTags.getText(c+1,sb);
             for(int i=0;i<c;i++){
                 sb.append("\t");
             }
             sb.append("</" + this.getTagName() + ">\n");
-            return sb.toString();
+            return sb;
         }
     }
 
     @Override
     public String getText(){
-        return getText(0);
+        return getText(0,new StringBuffer()).toString();
     }
 
 }
