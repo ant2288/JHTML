@@ -111,7 +111,6 @@ public class Attributes {
      * 返回HTML样式的Attributes字符串
      * @return 返回HTML样式的Attributes字符串
      */
-
     public String getText(){
         StringBuffer sb = new StringBuffer();
         List<Attribute> list = this.getAll();
@@ -119,6 +118,19 @@ public class Attributes {
             sb.append(a.getText() + " ");
         }
         return sb.toString().trim();
+    }
+
+    /**
+     * 判断属性中是否包含有属性名为name的属性
+     * @param name 属性名
+     * @return 如果有返回true，反之返回false
+     */
+    public boolean hasAttribute(String name){
+        if(map.get(name)==null){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     /**

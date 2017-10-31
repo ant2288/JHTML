@@ -98,6 +98,16 @@ public abstract class AbstractTag implements Tag{
     }
 
     @Override
+    public Attribute getAttributeByName(String name){
+        return attributes.get(name);
+    }
+
+    @Override
+    public boolean hasAttributeByName(String name){
+        return attributes.hasAttribute(name);
+    }
+
+    @Override
     public String getText(){
         return getText(0,new StringBuffer()).toString();
     }

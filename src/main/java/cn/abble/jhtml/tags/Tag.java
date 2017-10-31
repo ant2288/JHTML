@@ -1,5 +1,6 @@
 package cn.abble.jhtml.tags;
 
+import cn.abble.jhtml.attribute.Attribute;
 import cn.abble.jhtml.attribute.Attributes;
 import cn.abble.jhtml.tags.util.SubTags;
 
@@ -99,5 +100,19 @@ public interface Tag {
      * @return sb
      */
     StringBuffer getText(int c,StringBuffer sb);
+
+    /**
+     * 根据属性名称获取属性。
+     * @param name 属性名称
+     * @return 获取的属性，如果不存在，返回一个新的Attribute
+     */
+    Attribute getAttributeByName(String name);
+
+    /**
+     * 根据属性名判断是否存在该属性
+     * @param name 属性名
+     * @return 如果存在返回true，否则返回false
+     */
+    boolean hasAttributeByName(String name);
 
 }
