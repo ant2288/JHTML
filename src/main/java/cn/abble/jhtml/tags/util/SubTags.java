@@ -5,6 +5,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import cn.abble.jhtml.tags.Tag;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -65,9 +66,16 @@ public class SubTags {
     }
 
     public void addTagByIndex(Tag tag , int index){
-
+        //TODO
     }
 
+    /**
+     * 获取所有的子标签
+     * @return 所有的子标签
+     */
+    public List<Tag> getAll(){
+        return list;
+    }
     /**
      * 获取所有子标签的HTML代码
      * @return 所有子标签的HTML代码;
