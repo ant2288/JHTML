@@ -60,10 +60,10 @@ public abstract class AbstractTag implements Tag{
         attributes.add(list);
     }
 
-    @Override
+    /**@Override
     public void addAttribute(String name,@Nullable String value){
         attributes.add(checkNotNull(name),value);
-    }
+    }**/
 
     @Override
     public void clearAttributes(){

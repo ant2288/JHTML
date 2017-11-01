@@ -20,7 +20,7 @@ public class Selector {
     static ArrayList<Tag> result = new ArrayList<>();
     public static final String ID = "id";
 
-    @NotTest
+
     private static List<Tag> DFS(Tag root,SelectorJudge judge,SelectorBreak selectorBreak){
         Stack<Tag> stack = new Stack<>();
         stack.push(root);
@@ -46,8 +46,8 @@ public class Selector {
      * @param grammar 原则语法，和jQuery类似
      * @return 选择的结果
      */
-    @NotTest
-    public static List<Tag> select(String grammar,Tag root){
+
+    public static SelectReturnResult select(String grammar,Tag root){
         checkNotNull(grammar);
         grammar = grammar.trim();
         if(grammar.length() == 0){
@@ -57,18 +57,43 @@ public class Selector {
          * 获取第一个字符，用来判断使用哪种选择器
          */
         char first = grammar.charAt(0);
+        SelectReturnResult selectReturnResult = new SelectReturnResult();
         switch (first){
             case '#':
                 grammar = removeFirstChar(grammar);
+                grammar = "'" + grammar +"'";
                 idSelector(grammar,root);
+                if(result.size() == 1){
+                    selectReturnResult.setMessage("OK");
+                }else{
+                    selectReturnResult.setMessage("Fail");
+                }
                 break;
 
-            case '.' ://TODO 类选择器
+            case '.' :
+                grammar = removeFirstChar(grammar);
+                grammar = "'" + grammar +"'";
+                classSelector(grammar,root);
+                if(result.size() > 0){
+                    selectReturnResult.setMessage("OK");
+                }else{
+                    selectReturnResult.setMessage("Fail");
+                }
+                break;
 
-
-            default: //TODO 标签选择器
+            default:
+                grammar = removeFirstChar(grammar);
+                grammar = "'" + grammar +"'";
+                tagSelector(grammar,root);
+                if(result.size() > 0){
+                    selectReturnResult.setMessage("OK");
+                }else{
+                    selectReturnResult.setMessage("Fail");
+                }
+                break;
         }
-        return null;
+        selectReturnResult.setResult(result);
+        return selectReturnResult;
     }
 
     private static String removeFirstChar(String s){
@@ -76,21 +101,21 @@ public class Selector {
     }
 
     private static void idSelector(String grammar,Tag root){
-        SelectorJudge selectorJudge = e -> e.hasAttributeByName(ID) ?
-                (e.getAttributeByName(ID).getValue().equals(grammar)?true:false):false;
 
-        SelectorBreak selectorBreak = ()->result.size() == 0 ? false : true;
+        SelectorJudge selectorJudge = e -> e.hasAttributeByName("id") && (e.getAttributeByName("id").getValue().equals(grammar));
+
+        SelectorBreak selectorBreak = ()-> result.size() != 0;
         DFS(root,selectorJudge,selectorBreak);
     }
 
     private static void classSelector(String grammar,Tag root){
-        SelectorJudge selectorJudge = e -> !e.hasAttributeByName("class")?false:e.getAttributeByName("class").getValue().equals(grammar)?true:false;
+        SelectorJudge selectorJudge = e -> e.hasAttributeByName("class") && (e.getAttributeByName("class").getValue().equals(grammar));
         SelectorBreak selectorBreak = () -> false;
         DFS(root,selectorJudge,selectorBreak);
     }
 
     private static void tagSelector(String grammar,Tag root){
-        SelectorJudge selectorJudge = e -> e.getTagName().equals(grammar)?true:false;
+        SelectorJudge selectorJudge = e -> e.getTagName().equals(grammar);
         SelectorBreak selectorBreak = () -> false;
         DFS(root,selectorJudge,selectorBreak);
     }

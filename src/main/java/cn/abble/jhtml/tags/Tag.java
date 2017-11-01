@@ -48,7 +48,7 @@ public interface Tag {
      * @param name 属性名
      * @param value 属性值 可以为空
      */
-    void addAttribute(String name,@Nullable String value);
+   // void addAttribute(String name,@Nullable String value);
 
     /**
      * 向该标签添加多个属性。
