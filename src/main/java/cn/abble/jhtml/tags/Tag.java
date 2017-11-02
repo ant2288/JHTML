@@ -115,4 +115,9 @@ public interface Tag {
      */
     boolean hasAttributeByName(String name);
 
+    /**
+     * 设置标签内文本，如<p>文本</p>
+     * @param text 设置的文本
+     */
+    void setInnerText(String text);
 }

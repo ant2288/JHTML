@@ -6,7 +6,7 @@ class SelectReturnResult{
     var message: String = "OK"
         get
         set
-    var result: List<Tag> = ArrayList<Tag>()
+    var result: List<Tag> = ArrayList()
         get
         set
 }

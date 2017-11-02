@@ -14,6 +14,7 @@ import static com.google.common.base.Preconditions.*;
  * @since 1.0
  */
 public class TagManager {
+    public static final String OK = "OK";
     Multimap<String,Tag> map;
     Tag root;
     public TagManager(Tag root){
@@ -29,7 +30,7 @@ public class TagManager {
     public Tag getTagById(String id){
         checkNotNull(id);
         SelectReturnResult selectReturnResult = Selector.select("#"+id,root);
-        if(selectReturnResult.getMessage().equals("OK")){
+        if(OK.equals(selectReturnResult.getMessage())){
             return selectReturnResult.getResult().get(0);
         }else{
             return null;

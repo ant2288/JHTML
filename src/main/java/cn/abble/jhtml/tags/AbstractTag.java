@@ -23,6 +23,8 @@ public abstract class AbstractTag implements Tag{
 
     protected Tag parent;
 
+    protected String contextText;
+
     @Override
     public SubTags getChildrenTags() {
         return subTags;
@@ -88,6 +90,16 @@ public abstract class AbstractTag implements Tag{
             return sb;
         }else{
             sb.append(">\n");
+            /**
+             * 添加文本消息
+             */
+            if(contextText != null){
+                for(int i=0;i<c+1;i++){
+                    sb.append("\t");
+                }
+                sb.append(contextText+"\n");
+
+            }
             subTags.getText(c+1,sb);
             for(int i=0;i<c;i++){
                 sb.append("\t");
@@ -105,6 +117,11 @@ public abstract class AbstractTag implements Tag{
     @Override
     public boolean hasAttributeByName(String name){
         return attributes.hasAttribute(name);
+    }
+
+    @Override
+    public void setInnerText(String text){
+        contextText = text;
     }
 
     @Override
