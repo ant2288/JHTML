@@ -60,6 +60,7 @@ public class Selector {
         SelectReturnResult selectReturnResult = new SelectReturnResult();
         switch (first){
             case '#':
+                result.clear();
                 grammar = removeFirstChar(grammar);
                 grammar = "'" + grammar +"'";
                 idSelector(grammar,root);
@@ -71,6 +72,7 @@ public class Selector {
                 break;
 
             case '.' :
+                result.clear();
                 grammar = removeFirstChar(grammar);
                 grammar = "'" + grammar +"'";
                 classSelector(grammar,root);
@@ -82,8 +84,9 @@ public class Selector {
                 break;
 
             default:
-                grammar = removeFirstChar(grammar);
-                grammar = "'" + grammar +"'";
+
+                //grammar = "'" + grammar +"'";
+                result.clear();
                 tagSelector(grammar,root);
                 if(result.size() > 0){
                     selectReturnResult.setMessage("OK");
