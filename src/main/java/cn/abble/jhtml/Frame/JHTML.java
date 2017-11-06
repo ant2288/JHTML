@@ -1,5 +1,6 @@
 package cn.abble.jhtml.Frame;
 
+import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.generate.Generate;
 import cn.abble.jhtml.layout.Layout;
 import cn.abble.jhtml.tags.Tag;
@@ -20,6 +21,7 @@ public class JHTML {
     public static Tag html;
 
     private Layout layout;
+    private CSS css;
 
     static{
         root = Create.createTagByName("html");
@@ -31,10 +33,10 @@ public class JHTML {
      * 构造函数，用来初始化整个页面框架
      */
     public JHTML(){
-        //TODO:初始化页面
         Tag head = Create.createTagByNameWithParent("head",root);
         Tag title = Create.createTagByNameWithParent("title",head);
         Tag body = Create.createTagByNameWithParent("body",root);
+        css = new CSS();
     }
 
     /**
@@ -62,7 +64,7 @@ public class JHTML {
 
     /**
      * 添加组件
-     * TODO:
+     * TODO:添加组件
      */
     public void add(){
 
@@ -70,7 +72,7 @@ public class JHTML {
 
 
     public void start(String path){
-        Generate generate = new Generate(root);
+        Generate generate = new Generate(root,css);
         generate.generate(checkNotNull(path));
     }
 

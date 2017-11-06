@@ -1,5 +1,6 @@
 package cn.abble.jhtml.generate;
 
+import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.tags.Tag;
 
 import java.io.*;
@@ -14,8 +15,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class Generate {
     private Tag root;
-    public Generate(Tag root){
+    private CSS css;
+    public Generate(Tag root,CSS css){
         this.root = root;
+        this.css = css;
     }
 
     public void generate(String path){
