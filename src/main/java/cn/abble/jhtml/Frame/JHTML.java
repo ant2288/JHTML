@@ -60,6 +60,7 @@ public class JHTML {
         this.layout = layout;
         Tag body = Selector.select("body",root).getResult().get(0);
         layout.init(body);
+        layout.addCSS(css);
     }
 
     /**
@@ -71,8 +72,13 @@ public class JHTML {
     }
 
 
-    public void start(String path){
-        Generate generate = new Generate(root,css);
+    public void start(String path,boolean externalCSS){
+        if(externalCSS){
+            Tag head = Selector.select("head",root).getResult().get(0);
+            Tag link = Create.createTagByNameWithAttribute("link","rel='stylesheet'","href='./jhtml_css.css'","type='text/css'");
+            head.addChildren(link);
+        }
+        Generate generate = new Generate(root,css,externalCSS);
         generate.generate(checkNotNull(path));
     }
 

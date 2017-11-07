@@ -1,6 +1,7 @@
 package cn.abble.jhtml.layout;
 
 import cn.abble.jhtml.Frame.JHTML;
+import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.tags.Tag;
 import cn.abble.jhtml.util.Create;
 
@@ -35,5 +36,10 @@ public class BorderLayout implements Layout{
         root.addChildren(south);
         root.addChildren(north);
         root.addChildren(center);
+    }
+
+    @Override
+    public void addCSS(CSS css) {
+        css.addManyCSS("#jhtml_east","color:red");
     }
 }

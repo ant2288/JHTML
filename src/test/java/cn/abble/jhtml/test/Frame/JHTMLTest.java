@@ -11,8 +11,8 @@ public class JHTMLTest {
         jhtml.setTitle("boo");
         jhtml.setLayout(new BorderLayout());
 
-        String path = "D:\\1.html";
-        jhtml.start(path);
+        String path = "D:\\jthmlTest";
+        jhtml.start(path,true);
     }
 
 

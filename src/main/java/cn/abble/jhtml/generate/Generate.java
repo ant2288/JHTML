@@ -16,14 +16,16 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class Generate {
     private Tag root;
     private CSS css;
-    public Generate(Tag root,CSS css){
+    private boolean externalCSS;
+    public Generate(Tag root,CSS css,boolean externalCSS){
         this.root = root;
         this.css = css;
+        this.externalCSS = externalCSS;
     }
 
     public void generate(String path){
         checkNotNull(path);
-        File file = createFile(path);
+        File file = createFile(path+"\\jhtml.html");
         String html = root.getText();
         System.out.print(html);
         try {
@@ -31,6 +33,17 @@ public class Generate {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        if(externalCSS){
+            File cssFile = createFile(path+"\\jhtml_css.css");
+            String cssText = css.getText();
+            try {
+                write(cssFile,cssText);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
     }
 
     private File createFile(String path){
@@ -53,6 +66,7 @@ public class Generate {
         bufferedWriter.write(html);
         bufferedWriter.flush();
         bufferedWriter.close();
-
     }
+
+
 }

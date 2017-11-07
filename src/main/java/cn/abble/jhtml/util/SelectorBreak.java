@@ -6,6 +6,7 @@ package cn.abble.jhtml.util;
  * @version Version
  * @since 1.0
  */
+@FunctionalInterface
 public interface SelectorBreak {
 
     boolean readyBreak();

@@ -8,7 +8,7 @@ import cn.abble.jhtml.tags.Tag;
  * @version Version 1.0
  * @since 1.0
  */
-
+@FunctionalInterface
 public interface SelectorJudge {
     /**
      * 判断该标签是不是选择器(Selector)所需的

@@ -1,5 +1,6 @@
 package cn.abble.jhtml.layout;
 
+import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.tags.Tag;
 
 /**
@@ -14,4 +15,10 @@ public interface Layout {
      * @param root 根标签
      */
     void init(Tag root);
+
+    /**
+     * 添加css
+     * @param css css对象
+     */
+    void addCSS(CSS css);
 }
