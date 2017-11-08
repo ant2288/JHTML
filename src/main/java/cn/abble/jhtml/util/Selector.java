@@ -65,7 +65,7 @@ public class Selector {
                 grammar = "'" + grammar +"'";
                 idSelector(grammar,root);
                 if(result.size() == 1){
-                    selectReturnResult.setMessage("OK");
+                    selectReturnResult.setMessage(SelectReturnResult.OK);
                 }else{
                     selectReturnResult.setMessage("Fail");
                 }
@@ -77,7 +77,7 @@ public class Selector {
                 grammar = "'" + grammar +"'";
                 classSelector(grammar,root);
                 if(result.size() > 0){
-                    selectReturnResult.setMessage("OK");
+                    selectReturnResult.setMessage(SelectReturnResult.OK);
                 }else{
                     selectReturnResult.setMessage("Fail");
                 }
@@ -89,7 +89,7 @@ public class Selector {
                 result.clear();
                 tagSelector(grammar,root);
                 if(result.size() > 0){
-                    selectReturnResult.setMessage("OK");
+                    selectReturnResult.setMessage(SelectReturnResult.OK);
                 }else{
                     selectReturnResult.setMessage("Fail");
                 }

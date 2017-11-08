@@ -25,7 +25,7 @@ public class Generate {
 
     public void generate(String path){
         checkNotNull(path);
-        File file = createFile(path+"\\jhtml.html");
+        File file = createFile(path+"\\JHTML.html");
         String html = root.getText();
         System.out.print(html);
         try {
@@ -35,7 +35,7 @@ public class Generate {
         }
 
         if(externalCSS){
-            File cssFile = createFile(path+"\\jhtml_css.css");
+            File cssFile = createFile(path+"\\JHTML_css.css");
             String cssText = css.getText();
             try {
                 write(cssFile,cssText);

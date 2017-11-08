@@ -1,5 +1,6 @@
 package cn.abble.jhtml.Frame;
 
+import cn.abble.jhtml.component.Component;
 import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.generate.Generate;
 import cn.abble.jhtml.layout.Layout;
@@ -67,15 +68,15 @@ public class JHTML {
      * 添加组件
      * TODO:添加组件
      */
-    public void add(){
-
+    public void add(Component component){
+        layout.add(component);
     }
 
 
     public void start(String path,boolean externalCSS){
         if(externalCSS){
             Tag head = Selector.select("head",root).getResult().get(0);
-            Tag link = Create.createTagByNameWithAttribute("link","rel='stylesheet'","href='./jhtml_css.css'","type='text/css'");
+            Tag link = Create.createTagByNameWithAttribute("link","rel='stylesheet'","href='./JHTML_css.css'","type='text/css'");
             head.addChildren(link);
         }
         Generate generate = new Generate(root,css,externalCSS);

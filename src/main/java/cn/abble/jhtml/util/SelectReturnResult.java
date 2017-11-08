@@ -5,6 +5,8 @@ import cn.abble.jhtml.tags.Tag;
 import java.util.List;
 
 public class SelectReturnResult {
+    public static final String OK = "OK";
+
     private String message;
     private List<Tag> result;
 

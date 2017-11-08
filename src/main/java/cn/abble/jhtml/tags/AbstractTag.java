@@ -48,6 +48,7 @@ public abstract class AbstractTag implements Tag{
 
     @Override
     public void addChildren(Tag children){
+
         subTags.addLast(children);
     }
 
@@ -86,7 +87,7 @@ public abstract class AbstractTag implements Tag{
         sb.append("<"+this.getTagName()+" ");
         sb.append(attributes.getText());
         if(this.isSelfClosingTag()){
-            sb.append("/>");
+            sb.append("/>\n");
             return sb;
         }else{
             sb.append(">\n");

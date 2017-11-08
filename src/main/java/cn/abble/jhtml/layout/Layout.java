@@ -1,5 +1,6 @@
 package cn.abble.jhtml.layout;
 
+import cn.abble.jhtml.component.Component;
 import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.tags.Tag;
 
@@ -21,4 +22,17 @@ public interface Layout {
      * @param css css对象
      */
     void addCSS(CSS css);
+
+    /**
+     * 向布局里添加组件
+     * @param component 组件
+     */
+    void add(Component component);
+
+    /**
+     * 向布局里指定位置添加组件
+     * @param component 组件
+     * @param position 位置
+     */
+    void add(Component component,String position);
 }

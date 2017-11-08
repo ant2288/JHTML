@@ -68,8 +68,8 @@ public class CSSContext {
         this.addKeyAndValue(cssKeyAndValue);
     }
 
-    public void getText(StringBuffer buffer){
 
+    public void getText(StringBuffer buffer){
         for(CSSKeyAndValue c : list){
             buffer.append("\t");
             buffer.append(c.getKey());
