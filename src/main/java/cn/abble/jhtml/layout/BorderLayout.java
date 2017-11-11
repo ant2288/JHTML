@@ -29,25 +29,34 @@ public class BorderLayout implements Layout{
     public static final String NORTH  =  "JHTML_north";
     public static final String SOUTH  =  "JHTML_south";
     private Tag root;
-
+    /**
+     * 该布局的所有css样式
+     */
+    private CSS css;
+    /**
+     * 这个对象的序号，用来标识htmlId
+     */
+    private int orderNumber;
+    
     public BorderLayout(){
-        count++;
+        css = new CSS();
+        orderNumber = count++;
     }
 
     @Override
     public void init(Tag root){
         this.root = root;
-        Tag east = Create.createTagByNameWithAttribute("div","id='JHTML_east"+count+"'");
-        Tag west = Create.createTagByNameWithAttribute("div","id='JHTML_west"+count+"'");
-        Tag south = Create.createTagByNameWithAttribute("div","id='JHTML_south"+count+"'");
-        Tag north = Create.createTagByNameWithAttribute("div","id='JHTML_north"+count+"'");
-        Tag center = Create.createTagByNameWithAttribute("div","id='JHTML_center"+count+"'");
+        Tag east = Create.createTagByNameWithAttribute("div","id='JHTML_east"+orderNumber+"'");
+        Tag west = Create.createTagByNameWithAttribute("div","id='JHTML_west"+orderNumber+"'");
+        Tag south = Create.createTagByNameWithAttribute("div","id='JHTML_south"+orderNumber+"'");
+        Tag north = Create.createTagByNameWithAttribute("div","id='JHTML_north"+orderNumber+"'");
+        Tag center = Create.createTagByNameWithAttribute("div","id='JHTML_center"+orderNumber+"'");
 
-        Tag container = Create.createTagByNameWithAttribute("div","id='JHTML_container"+count+"'");
+        Tag container = Create.createTagByNameWithAttribute("div","id='JHTML_container"+orderNumber+"'");
         container.addChildren(north);
-        Tag main = Create.createTagByNameWithAttribute("div","id='JHTML_main"+count+"'");
+        Tag main = Create.createTagByNameWithAttribute("div","id='JHTML_main"+orderNumber+"'");
         container.addChildren(main);
-        Tag centerBox = Create.createTagByNameWithAttribute("div","id='JHTML_centerBox"+count+"'");
+        Tag centerBox = Create.createTagByNameWithAttribute("div","id='JHTML_centerBox"+orderNumber+"'");
         main.addChildren(centerBox);
         centerBox.addChildren(center);
         main.addChildren(east);
@@ -59,17 +68,17 @@ public class BorderLayout implements Layout{
     }
 
     @Override
-    public void addCSS(CSS css) {
+    public void addCSS() {
         css.addManyCSS("*","padding:0;margin:0");
         css.addManyCSS("body,html","height:100%;font:20px/40px\"microsoft yahei\";color:black");
-        css.addManyCSS("#JHTML_container"+count,"width:100%;margin:0 auto;height:100%");
-        css.addManyCSS("#JHTML_north"+count+",#jhtml_south"+count,"height:12.5%;width:100%;background:deeppink;");
-        css.addManyCSS("#JHTML_main"+count,"height:75%");
-        css.addManyCSS("#JHTML_centerBox"+count+",#JHTML_west"+count+",#JHTML_east"+count,"height:100%;float:left");
-        css.addManyCSS("#JHTML_centerBox"+count,"width:100%;color:#1fc195");
-        css.addManyCSS("#JHTML_west"+count,"background: lightgrey;width: 15%;margin-left: -100%;");
-        css.addManyCSS("#JHTML_east"+count,"background: #2e6da4;width: 15%;margin-left: -15%;");
-        css.addManyCSS("#JHTML_center"+count,"padding-left: 15%;");
+        css.addManyCSS("#JHTML_container"+orderNumber,"width:100%;margin:0 auto;height:100%");
+        css.addManyCSS("#JHTML_north"+orderNumber+",#jhtml_south"+orderNumber,"height:12.5%;width:100%;background:deeppink;");
+        css.addManyCSS("#JHTML_main"+orderNumber,"height:75%");
+        css.addManyCSS("#JHTML_centerBox"+orderNumber+",#JHTML_west"+orderNumber+",#JHTML_east"+orderNumber,"height:100%;float:left");
+        css.addManyCSS("#JHTML_centerBox"+orderNumber,"width:100%;color:#1fc195");
+        css.addManyCSS("#JHTML_west"+orderNumber,"background: lightgrey;width: 15%;margin-left: -100%;");
+        css.addManyCSS("#JHTML_east"+orderNumber,"background: #2e6da4;width: 15%;margin-left: -15%;");
+        css.addManyCSS("#JHTML_center"+orderNumber,"padding-left: 15%;");
     }
 
     @Override
@@ -79,11 +88,15 @@ public class BorderLayout implements Layout{
 
     @Override
     public void add(Component component, String position) {
-       SelectReturnResult result =  Selector.select("#"+position+count,root);
+       SelectReturnResult result =  Selector.select("#"+position+orderNumber,root);
        if(result.getMessage().equals(SelectReturnResult.OK)){
            result.getResult().get(0).addChildren(component.getTag());
        }
     }
 
+    @Override
+    public CSS getCSS(){
+        return css;
+    }
 
 }

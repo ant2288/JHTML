@@ -82,4 +82,15 @@ public class CSSContext {
             }
         }
     }
+
+    public String getKeyAndValueText(){
+        StringBuilder stringBuilder = new StringBuilder();
+        list.forEach(cssKeyAndValue -> {
+            stringBuilder.append(cssKeyAndValue.getKey());
+            stringBuilder.append(":");
+            stringBuilder.append(cssKeyAndValue.getValue());
+            stringBuilder.append(";");
+        });
+        return stringBuilder.toString();
+    }
 }

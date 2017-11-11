@@ -19,9 +19,10 @@ public interface Layout {
 
     /**
      * 添加css
-     * @param css css对象
      */
-    void addCSS(CSS css);
+    void addCSS();
+
+    CSS getCSS();
 
     /**
      * 向布局里添加组件

@@ -25,10 +25,11 @@ public class CSS {
      * @param keyAndValue 属性和属性名称
      */
     public void add(String selector,String keyAndValue){
+        //合并
         if(map.containsKey(selector)){
             CSSContext cssContext = map.get(selector);
             cssContext.add(keyAndValue);
-        }else{
+        }else{//新建
             CSSContext cssContext = new CSSContext();
             cssContext.add(keyAndValue);
             map.put(selector,cssContext);
@@ -67,5 +68,8 @@ public class CSS {
         return buffer.toString();
     }
 
+    public Map<String,CSSContext> getMap(){
+        return map;
+    }
 
 }

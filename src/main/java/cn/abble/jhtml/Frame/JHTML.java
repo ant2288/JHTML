@@ -2,12 +2,17 @@ package cn.abble.jhtml.Frame;
 
 import cn.abble.jhtml.component.Component;
 import cn.abble.jhtml.css.CSS;
+import cn.abble.jhtml.css.CSSContext;
 import cn.abble.jhtml.generate.Generate;
 import cn.abble.jhtml.layout.BorderLayout;
 import cn.abble.jhtml.layout.Layout;
 import cn.abble.jhtml.tags.Tag;
 import cn.abble.jhtml.util.Create;
 import cn.abble.jhtml.util.Selector;
+
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 
 import static com.google.common.base.Preconditions.*;
 
@@ -23,7 +28,13 @@ public class JHTML {
     public static Tag html;
 
     private Layout layout;
-    private CSS css;
+
+    private LinkedList<CSS> cssList;
+
+    /**
+     * 最后生成代码的时候，从cssList中取出所有css进行合并
+     */
+    private CSS AllCSS;
 
     static{
         root = Create.createTagByName("html");
@@ -38,7 +49,7 @@ public class JHTML {
         Tag head = Create.createTagByNameWithParent("head",root);
         Tag title = Create.createTagByNameWithParent("title",head);
         Tag body = Create.createTagByNameWithParent("body",root);
-        css = new CSS();
+        cssList = new LinkedList<>();
         setLayout(new BorderLayout());
     }
 
@@ -57,6 +68,8 @@ public class JHTML {
      * @param layout 布局
      */
     public void setLayout(Layout layout){
+
+        cssList.add(layout.getCSS());
         cleanLayout(layout);
         if(layout == null){
             return;
@@ -68,7 +81,7 @@ public class JHTML {
 
     private void initLayout(Tag tag){
         layout.init(tag);
-        layout.addCSS(css);
+        layout.addCSS();
     }
 
     /**
@@ -98,13 +111,36 @@ public class JHTML {
 
 
     public void start(String path,boolean externalCSS){
+        //TODO:getAllCSS
+        getAllCSS();
         if(externalCSS){
             Tag head = Selector.select("head",root).getResult().get(0);
             Tag link = Create.createTagByNameWithAttribute("link","rel='stylesheet'","href='./JHTML_css.css'","type='text/css'");
             head.addChildren(link);
         }
-        Generate generate = new Generate(root,css,externalCSS);
+
+        Generate generate = new Generate(root,AllCSS,externalCSS);
         generate.generate(checkNotNull(path));
+    }
+
+    /**
+     * 获取所有的css对象，并将这些对象的所有内容放入AllCSS对象中
+     */
+    private void getAllCSS(){
+        //初始化AllCSS
+        AllCSS = new CSS();
+        //遍历cssList
+        cssList.forEach(css -> {
+            //获取一个css对象的map
+            Map<String,CSSContext> map = css.getMap();
+            //遍历map
+            map.forEach((k,v)->{
+                //获取cssContext的内容
+                String keyAndValueText = v.getKeyAndValueText();
+                //向AllCSS中添加
+                AllCSS.addManyCSS(k,keyAndValueText);
+            });
+        });
     }
 
 }
