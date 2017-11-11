@@ -8,6 +8,8 @@ import cn.abble.jhtml.util.Create;
 import cn.abble.jhtml.util.SelectReturnResult;
 import cn.abble.jhtml.util.Selector;
 
+import java.util.LinkedList;
+
 /**
  * 页面布局，这个布局将页面分为5个位置，分别是CENTER、EAST、WEST、NORTH、SOUTH
  * 和JFrame的差不多
@@ -37,11 +39,19 @@ public class BorderLayout implements Layout{
      * 这个对象的序号，用来标识htmlId
      */
     private int orderNumber;
+
+    /**
+     * 用于删除所有标签。
+     */
+    private Tag temp;
     
     public BorderLayout(){
         css = new CSS();
-        orderNumber = count++;
+        count++;
+        orderNumber = count;
+
     }
+
 
     @Override
     public void init(Tag root){
@@ -64,6 +74,7 @@ public class BorderLayout implements Layout{
         container.addChildren(south);
         root.addChildren(container);
 
+        temp = container;
 
     }
 
@@ -99,4 +110,9 @@ public class BorderLayout implements Layout{
         return css;
     }
 
+    @Override
+    public void clean() {
+        css.clean();
+        root.remove(temp);
+    }
 }

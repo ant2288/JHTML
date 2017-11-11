@@ -13,6 +13,7 @@ public class JHTMLTest {
         jhtml.setTitle("boo123456");
         JButton jButton = new JButton();
         jhtml.add(jButton);
+        jhtml.setLayout(new BorderLayout());
         String path = "D:\\jthmlTest";
         jhtml.start(path,true);
     }

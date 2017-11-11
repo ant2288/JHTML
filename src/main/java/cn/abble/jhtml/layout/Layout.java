@@ -22,6 +22,10 @@ public interface Layout {
      */
     void addCSS();
 
+    /**
+     * 获取css对象
+     * @return css对象
+     */
     CSS getCSS();
 
     /**
@@ -36,4 +40,9 @@ public interface Layout {
      * @param position 位置
      */
     void add(Component component,String position);
+
+    /**
+     * 清理该布局的所有代码：css+html
+     */
+    void clean();
 }

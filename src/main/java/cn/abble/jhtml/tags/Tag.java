@@ -120,4 +120,10 @@ public interface Tag {
      * @param text 设置的文本
      */
     void setInnerText(String text);
+
+    /**
+     * 移除tag子标签
+     * @param tag 要移除的子标签
+     */
+    void remove(Tag tag);
 }

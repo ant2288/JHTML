@@ -72,4 +72,11 @@ public class CSS {
         return map;
     }
 
+    /**
+     * 清除css所有内容
+     */
+    public void clean(){
+        map.clear();
+    }
+
 }

@@ -47,6 +47,11 @@ public abstract class AbstractTag implements Tag{
     }
 
     @Override
+    public void remove(Tag tag){
+        subTags.remove(tag);
+    }
+
+    @Override
     public void addChildren(Tag children){
 
         subTags.addLast(children);

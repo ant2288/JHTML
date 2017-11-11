@@ -68,14 +68,14 @@ public class JHTML {
      * @param layout 布局
      */
     public void setLayout(Layout layout){
-
         cssList.add(layout.getCSS());
-        cleanLayout(layout);
-        if(layout == null){
-            return;
-        }
-        this.layout = layout;
         Tag body = Selector.select("body",root).getResult().get(0);
+        if(this.layout == null){
+            this.layout = layout;
+        }else{
+            cleanLayout(this.layout);
+            this.layout = layout;
+        }
         initLayout(body);
     }
 
@@ -88,18 +88,18 @@ public class JHTML {
      * 更改布局前，清除原来的布局遗留代码
      * @param layout 原来的布局
      */
-    private void cleanLayout(Layout layout) {
-        if (layout == null) {
+    public void cleanLayout(Layout layout) {
+        if (this.layout == null) {
             return;
         }
 
         //TODO:清除css遗留代码
         //TODO:清除html遗留代码
+        layout.clean();
     }
 
     /**
      * 添加组件
-     * TODO:添加组件
      */
     public void add(Component component){
         layout.add(component);
@@ -111,7 +111,6 @@ public class JHTML {
 
 
     public void start(String path,boolean externalCSS){
-        //TODO:getAllCSS
         getAllCSS();
         if(externalCSS){
             Tag head = Selector.select("head",root).getResult().get(0);

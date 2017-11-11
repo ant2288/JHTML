@@ -65,6 +65,14 @@ public class SubTags {
         list.addLast(tag);
     }
 
+    /**
+     * 移除这个标签
+     * @param tag 移除标签
+     */
+    public void remove(Tag tag){
+        list.remove(tag);
+    }
+
     public void addTagByIndex(Tag tag , int index){
         //TODO:暂时不需要此方法
     }
