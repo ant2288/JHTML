@@ -9,16 +9,7 @@ import cn.abble.jhtml.util.Create;
  * @version Version 1.0
  * @since 1.0
  */
-public class JButton implements Component {
-    private String value;
-    private boolean enable = true;
-    private String name;
-    private String id;
-
-    @Override
-    public void setId(String id){
-        this.id = id;
-    }
+public class JButton extends AbstractComponent {
 
     public JButton(){
         value = "Button";
@@ -26,16 +17,6 @@ public class JButton implements Component {
 
     public JButton(String value){
         this.value = value;
-    }
-
-    @Override
-    public void setEnable(boolean enable){
-        this.enable = enable;
-    }
-
-    @Override
-    public void setName(String name){
-        this.name = name;
     }
 
     @Override

@@ -3,6 +3,7 @@ package cn.abble.jhtml.Frame;
 import cn.abble.jhtml.component.Component;
 import cn.abble.jhtml.css.CSS;
 import cn.abble.jhtml.generate.Generate;
+import cn.abble.jhtml.layout.BorderLayout;
 import cn.abble.jhtml.layout.Layout;
 import cn.abble.jhtml.tags.Tag;
 import cn.abble.jhtml.util.Create;
@@ -38,6 +39,7 @@ public class JHTML {
         Tag title = Create.createTagByNameWithParent("title",head);
         Tag body = Create.createTagByNameWithParent("body",root);
         css = new CSS();
+        setLayout(new BorderLayout());
     }
 
     /**
@@ -55,13 +57,31 @@ public class JHTML {
      * @param layout 布局
      */
     public void setLayout(Layout layout){
+        cleanLayout(layout);
         if(layout == null){
             return;
         }
         this.layout = layout;
         Tag body = Selector.select("body",root).getResult().get(0);
-        layout.init(body);
+        initLayout(body);
+    }
+
+    private void initLayout(Tag tag){
+        layout.init(tag);
         layout.addCSS(css);
+    }
+
+    /**
+     * 更改布局前，清除原来的布局遗留代码
+     * @param layout 原来的布局
+     */
+    private void cleanLayout(Layout layout) {
+        if (layout == null) {
+            return;
+        }
+
+        //TODO:清除css遗留代码
+        //TODO:清除html遗留代码
     }
 
     /**
@@ -70,6 +90,10 @@ public class JHTML {
      */
     public void add(Component component){
         layout.add(component);
+    }
+
+    public void add(Component component,String position){
+        layout.add(component,position);
     }
 
 
